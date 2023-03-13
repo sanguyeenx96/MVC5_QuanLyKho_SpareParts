@@ -1,0 +1,78 @@
+﻿@model WebQuanLySpare.Models.danhsachlinhkien
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id)
+<div class="col-lg-12" style="margin-top:20px">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align:center">
+            <i class="fa fa-pencil"></i><b> SỬA THÔNG TIN LINH KIỆN</b>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td class="col-sm-2">Tên model:</td>
+                            <td>@Html.EditorFor(model => model.model, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-2">Tên linh kiện:</td>
+                            <td>@Html.EditorFor(model => model.tenlinhkien, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-2">Mã linh kiện:</td>
+                            <td>@Html.EditorFor(model => model.malinhkien, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-2">Tên Maker:</td>
+                            <td>@Html.EditorFor(model => model.maker, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-2">Đơn vị tính:</td>
+                            <td>@Html.EditorFor(model => model.donvi, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-2">Đơn giá:</td>
+                            <td>@Html.EditorFor(model => model.dongia, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-2">Số lượng tồn kho:</td>
+                            <td>@Html.EditorFor(model => model.tonkho, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                        <tr>
+                            <td class="col-sm-2">Ghi chú:</td>
+                            <td>@Html.EditorFor(model => model.ghichu, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+            <input type="submit" value="Xác nhận" class="btn btn-success btn-block" />
+
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <a href='@Url.Action("index", "danhsachlinhkiens")' class="btn btn-outline btn-default"><i class="fa fa-chevron-left"></i> Quay lại</a>
+</div>
+
+}
+
+
+
+
+
+
+
+
+
+

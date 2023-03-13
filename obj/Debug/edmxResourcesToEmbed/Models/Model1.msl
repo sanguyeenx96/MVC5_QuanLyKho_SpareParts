@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebSparePartModelStoreContainer" CdmEntityContainer="WebSparePartEntities">
+    <EntitySetMapping Name="danhsachlinhkiens">
+      <EntityTypeMapping TypeName="WebSparePartModel.danhsachlinhkien">
+        <MappingFragment StoreEntitySet="danhsachlinhkien">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="tenlinhkien" ColumnName="tenlinhkien" />
+          <ScalarProperty Name="malinhkien" ColumnName="malinhkien" />
+          <ScalarProperty Name="maker" ColumnName="maker" />
+          <ScalarProperty Name="donvi" ColumnName="donvi" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="tonkho" ColumnName="tonkho" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dathangs">
+      <EntityTypeMapping TypeName="WebSparePartModel.dathang">
+        <MappingFragment StoreEntitySet="dathang">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="ngayhangve" ColumnName="ngayhangve" />
+          <ScalarProperty Name="tenlinhkien" ColumnName="tenlinhkien" />
+          <ScalarProperty Name="malinhkien" ColumnName="malinhkien" />
+          <ScalarProperty Name="maker" ColumnName="maker" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="donvi" ColumnName="donvi" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="models">
+      <EntityTypeMapping TypeName="WebSparePartModel.model">
+        <MappingFragment StoreEntitySet="model">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenmodel" ColumnName="tenmodel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_admin">
+      <EntityTypeMapping TypeName="WebSparePartModel.tbl_admin">
+        <MappingFragment StoreEntitySet="tbl_admin">
+          <ScalarProperty Name="ad_id" ColumnName="ad_id" />
+          <ScalarProperty Name="ad_name" ColumnName="ad_name" />
+          <ScalarProperty Name="ad_pass" ColumnName="ad_pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebSparePartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="danhsachlinhkien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="model" Type="nvarchar" MaxLength="50" />
+    <Property Name="tenlinhkien" Type="nvarchar(max)" />
+    <Property Name="malinhkien" Type="nvarchar(max)" />
+    <Property Name="maker" Type="nvarchar(max)" />
+    <Property Name="donvi" Type="nvarchar(max)" />
+    <Property Name="dongia" Type="int" />
+    <Property Name="tonkho" Type="int" />
+    <Property Name="ghichu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="dathang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ngaydathang" Type="nvarchar" MaxLength="100" />
+    <Property Name="ngayhangve" Type="nvarchar" MaxLength="100" />
+    <Property Name="tenlinhkien" Type="nvarchar(max)" />
+    <Property Name="malinhkien" Type="nvarchar(max)" />
+    <Property Name="maker" Type="nvarchar(max)" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="donvi" Type="nvarchar(max)" />
+    <Property Name="dongia" Type="int" />
+    <Property Name="thanhtien" Type="int" />
+    <Property Name="ghichu" Type="nvarchar(max)" />
+    <Property Name="trangthai" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="model">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenmodel" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_admin">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad_name" Type="varchar" MaxLength="50" />
+    <Property Name="ad_pass" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="WebSparePartModelStoreContainer">
+    <EntitySet Name="danhsachlinhkien" EntityType="Self.danhsachlinhkien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dathang" EntityType="Self.dathang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="model" EntityType="Self.model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

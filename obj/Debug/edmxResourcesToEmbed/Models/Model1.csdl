@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebSparePartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="danhsachlinhkien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenlinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="malinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="maker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="donvi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dongia" Type="Int32" />
+    <Property Name="tonkho" Type="Int32" />
+    <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dathang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ngaydathang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ngayhangve" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="tenlinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="malinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="maker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="donvi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dongia" Type="Int32" />
+    <Property Name="thanhtien" Type="Int32" />
+    <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="trangthai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="model">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenmodel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_admin">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ad_pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="WebSparePartEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="danhsachlinhkiens" EntityType="Self.danhsachlinhkien" />
+    <EntitySet Name="dathangs" EntityType="Self.dathang" />
+    <EntitySet Name="models" EntityType="Self.model" />
+    <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" />
+  </EntityContainer>
+</Schema>

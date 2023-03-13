@@ -1,0 +1,39 @@
+﻿@model WebQuanLySpare.Models.danhsachlinhkien
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>Nhập câu hỏi từ file Excel</title>
+
+
+@using (Html.BeginForm("Upload", "danhsachlinhkiens", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    if (ViewBag.msg != null)
+    {
+        <script>
+            alert("Đã nhập thành công!");
+        </script>
+    }
+    <div class="col-xs-12" style="margin-top:20px">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="text-align:center">
+                <strong> <i class="fa fa-upload"></i>  NHẬP CÂU HỎI TỪ EXCEL</strong>
+            </div>
+            <div class="panel-body">
+                <table class="table  table-bordered table-hover ">
+                    <tr>
+                        <td class="col-xs-2" style="text-align:center"><b>Model</b></td>
+                        <td class="col-xs-10">
+                            @Html.DropDownList("model", ViewBag.tenmodel as SelectList, "---Chọn model---", htmlAttributes: new { @class = "form-control", @required = "required" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-xs-2" style="text-align:center"><b>Chọn file Excel</b></td>
+                        <td> <input type="file" name="UploadedFile" class="btn btn-outline btn-success btn-block" /> </td>
+                    </tr>
+                </table>
+                <input type="submit" value="Xác nhận" class="btn btn-success btn-block" />
+            </div>
+        </div>
+    </div>
+}

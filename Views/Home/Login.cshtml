@@ -1,0 +1,81 @@
+﻿@model WebQuanLySpare.Models.tbl_admin
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/sbadmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="~/Content/sbadmin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/Content/sbadmin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> ログイン MFE
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.ad_name, new { htmlAttributes = new { @class = "form-control", placeholder = "Tên đăng nhập" , required = "required" } })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.PasswordFor(model => model.ad_pass, new { @class = "form-control", placeholder = "Mật khẩu" , required = "required" })
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block">
+                                        <span aria-hidden="true"></span>
+                                        Đăng nhập
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    @if (ViewBag.msg != null)
+                    {
+                        <div class="alert alert-danger">
+                            <strong>エラー!</strong> @ViewBag.msg
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="~/Content/sbadmin/vendor/jquery/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="~/Content/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="~/Content/sbadmin/vendor/metisMenu/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="~/Content/sbadmin/dist/js/sb-admin-2.js"></script>
+    }
+    </body>
+
+</html>

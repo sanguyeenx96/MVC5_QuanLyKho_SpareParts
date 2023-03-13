@@ -1,0 +1,102 @@
+﻿@model WebQuanLySpare.Models.danhsachlinhkien
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    if (ViewBag.msg != null)
+    {
+        <script>
+            alert("Đã thêm dữ liệu thành công!");
+        </script>
+    }
+    @Html.AntiForgeryToken()
+    <div class="col-lg-12" style="margin-top:20px">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="text-align:center">
+                <strong> <i class="fa fa-edit"></i>  THÊM LINH KIỆN MỚI THỦ CÔNG</strong>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table  table-bordered table-hover ">
+                        <tbody>
+                            <tr>
+                                <td class="col-xs-2" style="text-align:center"><b>Model</b></td>
+                                <td>
+                                    @Html.DropDownList("model", ViewBag.tenmodel as SelectList, "---Chọn model---", htmlAttributes: new { @class = "form-control", @required = "required" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-xs-2" style="text-align:center"><b>Tên linh kiện</b></td>
+                                <td>
+                                    @Html.EditorFor(model => model.tenlinhkien, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-xs-2" style="text-align:center"><b>Mã linh kiện</b></td>
+                                <td>
+                                    @Html.EditorFor(model => model.malinhkien, new { htmlAttributes = new { @class = "form-control" } })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-xs-2" style="text-align:center"><b>Maker</b></td>
+                                <td>
+                                    @Html.EditorFor(model => model.maker, new { htmlAttributes = new { @class = "form-control" } })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-xs-2" style="text-align:center"><b>Đơn vị</b></td>
+                                <td>
+                                    @Html.DropDownListFor(model => model.donvi,
+                                    new List<SelectListItem> {
+                                                        new SelectListItem { Value = "" , Text = "---Chọn đơn vị---" },
+                                                        new SelectListItem { Value = "pcs" , Text = "pcs" },
+                                                        new SelectListItem { Value = "thùng" , Text = "thùng" }
+                                      },
+                                    new { @class = "form-control", @required = "required" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-xs-2" style="text-align:center"><b>Đơn giá (VNĐ)</b></td>
+                                <td>
+                                    @Html.EditorFor(model => model.dongia, new { htmlAttributes = new { @class = "form-control" } })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-xs-2" style="text-align:center"><b>Tồn kho</b></td>
+                                <td>
+                                    @Html.EditorFor(model => model.tonkho, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-xs-2 " style="text-align:center"><b>Ghi chú</b></td>
+                                <td>
+                                    @Html.EditorFor(model => model.ghichu, new { htmlAttributes = new { @class = "form-control" } })
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <input type="submit" value="Xác nhận" class="btn btn-btn btn-success btn-block" />
+
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
+    <!-- /.panel -->
+}
+
+

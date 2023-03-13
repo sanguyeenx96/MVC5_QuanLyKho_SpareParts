@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebSparePartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="danhsachlinhkien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="tenlinhkien" Type="nvarchar(max)" />
+          <Property Name="malinhkien" Type="nvarchar(max)" />
+          <Property Name="maker" Type="nvarchar(max)" />
+          <Property Name="donvi" Type="nvarchar(max)" />
+          <Property Name="dongia" Type="int" />
+          <Property Name="tonkho" Type="int" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="dathang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ngaydathang" Type="nvarchar" MaxLength="100" />
+          <Property Name="ngayhangve" Type="nvarchar" MaxLength="100" />
+          <Property Name="tenlinhkien" Type="nvarchar(max)" />
+          <Property Name="malinhkien" Type="nvarchar(max)" />
+          <Property Name="maker" Type="nvarchar(max)" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="donvi" Type="nvarchar(max)" />
+          <Property Name="dongia" Type="int" />
+          <Property Name="thanhtien" Type="int" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+          <Property Name="trangthai" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="model">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenmodel" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="ad_id" />
+          </Key>
+          <Property Name="ad_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad_name" Type="varchar" MaxLength="50" />
+          <Property Name="ad_pass" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="WebSparePartModelStoreContainer">
+          <EntitySet Name="danhsachlinhkien" EntityType="Self.danhsachlinhkien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dathang" EntityType="Self.dathang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="model" EntityType="Self.model" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebSparePartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="danhsachlinhkien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tenlinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="malinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="maker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="donvi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dongia" Type="Int32" />
+          <Property Name="tonkho" Type="Int32" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="dathang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ngaydathang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ngayhangve" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tenlinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="malinhkien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="maker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="donvi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dongia" Type="Int32" />
+          <Property Name="thanhtien" Type="Int32" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="model">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenmodel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="ad_id" />
+          </Key>
+          <Property Name="ad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ad_pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="WebSparePartEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="danhsachlinhkiens" EntityType="Self.danhsachlinhkien" />
+          <EntitySet Name="dathangs" EntityType="Self.dathang" />
+          <EntitySet Name="models" EntityType="Self.model" />
+          <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebSparePartModelStoreContainer" CdmEntityContainer="WebSparePartEntities">
+          <EntitySetMapping Name="danhsachlinhkiens">
+            <EntityTypeMapping TypeName="WebSparePartModel.danhsachlinhkien">
+              <MappingFragment StoreEntitySet="danhsachlinhkien">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="tenlinhkien" ColumnName="tenlinhkien" />
+                <ScalarProperty Name="malinhkien" ColumnName="malinhkien" />
+                <ScalarProperty Name="maker" ColumnName="maker" />
+                <ScalarProperty Name="donvi" ColumnName="donvi" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="tonkho" ColumnName="tonkho" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dathangs">
+            <EntityTypeMapping TypeName="WebSparePartModel.dathang">
+              <MappingFragment StoreEntitySet="dathang">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+                <ScalarProperty Name="ngayhangve" ColumnName="ngayhangve" />
+                <ScalarProperty Name="tenlinhkien" ColumnName="tenlinhkien" />
+                <ScalarProperty Name="malinhkien" ColumnName="malinhkien" />
+                <ScalarProperty Name="maker" ColumnName="maker" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="donvi" ColumnName="donvi" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="models">
+            <EntityTypeMapping TypeName="WebSparePartModel.model">
+              <MappingFragment StoreEntitySet="model">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tenmodel" ColumnName="tenmodel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_admin">
+            <EntityTypeMapping TypeName="WebSparePartModel.tbl_admin">
+              <MappingFragment StoreEntitySet="tbl_admin">
+                <ScalarProperty Name="ad_id" ColumnName="ad_id" />
+                <ScalarProperty Name="ad_name" ColumnName="ad_name" />
+                <ScalarProperty Name="ad_pass" ColumnName="ad_pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
